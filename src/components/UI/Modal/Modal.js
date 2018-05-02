@@ -5,11 +5,12 @@ import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
 
-    shouldComponentUpdate(nextProps, nextState){
-        return nextProps.show !== this.props.show;
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.show !== this.props.show ||
+            nextProps.children !== this.props.children;
     }
-    
-    componentWillUpdate(){
+
+    componentWillUpdate() {
         log("componentWillUpdate");
     }
 
@@ -30,7 +31,7 @@ class Modal extends Component {
     }
 }
 
-function log(msg){
+function log(msg) {
     console.log("rv911-Modal: ", msg);
 }
 
